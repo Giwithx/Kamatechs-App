@@ -26,7 +26,7 @@
             android:id="@+id/txtHumid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:text="Humidity"
             android:textSize="16sp"
@@ -37,11 +37,22 @@
             android:id="@+id/txtStat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:text="Status"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/txtHumid"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAdjust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="Adjustment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/txtStat"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

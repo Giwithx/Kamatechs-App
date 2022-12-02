@@ -12,11 +12,12 @@
         <Button
             android:id="@+id/btnDashboard"
             android:layout_width="285dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
             android:text="Dashboard"
-            app:layout_constraintTop_toBottomOf="@+id/btnWeather"
-            tools:layout_editor_absoluteX="63dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWeather" />
 
         <TextView
             android:id="@+id/txtHome"
@@ -54,7 +55,7 @@
         <Button
             android:id="@+id/btnStorage"
             android:layout_width="285dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:text="Status"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,10 +66,11 @@
         <Button
             android:id="@+id/btnWeather"
             android:layout_width="285dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
             android:text="Overview"
-            app:layout_constraintTop_toBottomOf="@+id/btnStorage"
-            tools:layout_editor_absoluteX="63dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnStorage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -9,11 +9,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/btnDashboard"
+            android:layout_width="285dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
+            android:text="Dashboard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnWeather" />
+
         <TextView
             android:id="@+id/txtHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="105dp"
+            android:layout_marginTop="52dp"
             android:fontFamily="monospace"
             android:lineSpacingExtra="34sp"
             android:text="Kamatechs"
@@ -27,19 +37,40 @@
             android:layout_width="291dp"
             android:layout_height="212dp"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="28dp"
             android:src="@drawable/logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtHome" />
 
         <TextView
             android:id="@+id/txtDescriptionHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="285dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="32dp"
             android:text="Kamatechs is a controlled atmosphere storage device with an automated sorter that can help farmers to prolong the ripened state of post-harvest."
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <Button
+            android:id="@+id/btnStorage"
+            android:layout_width="285dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescriptionHome" />
+
+        <Button
+            android:id="@+id/btnWeather"
+            android:layout_width="285dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
+            android:text="Overview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnStorage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

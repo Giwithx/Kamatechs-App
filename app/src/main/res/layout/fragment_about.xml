@@ -11,17 +11,85 @@
 
         <TextView
             android:id="@+id/txtAbout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="206dp"
             android:text="About"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="60sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/dev1pic"
+            android:layout_width="136dp"
+            android:layout_height="139dp"
+            android:src="@drawable/_01818"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="119dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtAbout"/>
+
+        <TextView
+            android:id="@+id/txtaboutdev1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BIELZA, GIOVANNI"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dev1pic" />
+
+        <ImageView
+            android:id="@+id/dev2pic"
+            android:layout_width="136dp"
+            android:layout_height="139dp"
+            android:src="@drawable/_01818"
+            android:layout_marginTop="30dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="119dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtaboutdev1"/>
+
+        <TextView
+            android:id="@+id/txtaboutdev2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CREBELLO, CYNNA MAE"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dev2pic" />
+
+        <ImageView
+            android:id="@+id/dev3pic"
+            android:layout_width="136dp"
+            android:layout_height="139dp"
+            android:src="@drawable/_01818"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="119dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtaboutdev2"/>
+
+        <TextView
+            android:id="@+id/txtaboutdev3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PAJUDPOD JR., ALBERTO"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dev3pic" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

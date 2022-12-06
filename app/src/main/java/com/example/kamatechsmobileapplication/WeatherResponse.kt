@@ -68,9 +68,9 @@ class Main{
     @SerializedName("pressure")
     var pressure: Float = 0.toFloat()
     @SerializedName("temp_min")
-    var temp_min: Float = 0.toFloat()
+    var temp_min: Float = 0.0.toFloat()
     @SerializedName("temp_max")
-    var temp_max: Float = 0.toFloat()
+    var temp_max: Float = 0.0.toFloat()
 }
 class Sys {
     @SerializedName("country")

@@ -31,7 +31,7 @@ class WeatherActivity: AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val service = retrofit.create(WeatherService::class.java)
-        val call = service.getCurrentWeatherData(lat, lon, AppId)
+        val call = service.getCurrentWeatherData(lat, lon, AppId, units)
         call.enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(
                 call: Call<WeatherResponse>,
@@ -42,6 +42,8 @@ class WeatherActivity: AppCompatActivity() {
 
                     val stringBuilder = "Country: " +
                             weatherResponse.sys!!.country +
+                            "\n" +
+                            "Place: Marikina City" +
                             "\n" +
                             "Temperature: " +
                             weatherResponse.main!!.temp +
@@ -69,9 +71,10 @@ class WeatherActivity: AppCompatActivity() {
     }
     companion object{
         var BaseUrl = "https://api.openweathermap.org/"
-        var AppId = "bd2379967b9561975ac5cf8d4f27e9d9"
-        var lat = "14.649070"
-        var lon = "121.104970"
+        var AppId = "8676f9199326e823e584f9c635179f3a"
+        var lat = "14.65"
+        var lon = "121.10"
+        var units = "metric"
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

@@ -1,5 +1,6 @@
 package com.example.kamatechsmobileapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,7 @@ import com.example.kamatechsmobileapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var btnWeather: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,12 @@ class MainActivity : AppCompatActivity() {
 
         val actionbar = supportActionBar
         actionbar!!.title = "Kamatechs"
+
+        btnWeather = findViewById(R.id.btnWeather)
+        btnWeather.setOnClickListener{
+            val intent = Intent(this, WeatherActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

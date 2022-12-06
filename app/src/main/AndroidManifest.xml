@@ -32,6 +32,11 @@
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="true"
+            android:usesCleartextTraffic="true">
+        </activity>
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.kamatechsmobileapplication
+package com.example.kamatechsmobileapplication.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.example.kamatechsmobileapplication.R
 import com.example.kamatechsmobileapplication.databinding.FragmentHomeBinding
 
 
@@ -18,7 +19,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater, R.layout.fragment_home, container, false)
+        val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
+            R.layout.fragment_home, container, false)
 
         binding.btnWeather.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_weatherActivity)

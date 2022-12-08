@@ -14,10 +14,10 @@ import com.example.kamatechsmobileapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var btnWeather: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        @Suppress("UNUSED VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(
             this,
             R.layout.activity_main
@@ -33,11 +33,6 @@ class MainActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         actionbar!!.title = "Kamatechs"
 
-        btnWeather = findViewById(R.id.btnWeather)
-        btnWeather.setOnClickListener{
-            val intent = Intent(this, WeatherActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

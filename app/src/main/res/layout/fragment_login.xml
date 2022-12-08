@@ -16,116 +16,81 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="80dp"
+            android:textAlignment="center"
             android:text="Login"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:layout_marginTop="80dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/userNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="73dp"
-            android:layout_marginEnd="80dp"
-            android:text="User Name"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/passwordTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="80dp"
-            android:text="Password"
-            android:textAlignment="viewStart"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />
-
         <EditText
             android:id="@+id/userNameTextField"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
-            android:ems="10"
-            android:hint="Enter User Name"
-            android:importantForAutofill="no"
+            android:layout_margin="25dp"
+            android:drawableLeft="@drawable/usericon"
+            android:drawablePadding="20dp"
+            android:hint="Username"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
+            android:padding="20dp"
             android:text="@={myLoginViewModel.inputUsername}"
-            android:textSize="14sp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
             android:id="@+id/passwordTextField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="80dp"
-            android:ems="10"
-            android:hint="Enter Password"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
+            android:hint="Password"
+            android:layout_margin="25dp"
+            android:drawableLeft="@drawable/passicon"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:inputType="textPassword"
             android:text="@={myLoginViewModel.inputPassword}"
-            android:textSize="14sp"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/textColorSecondary"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="16dp"
-            android:onClick="@{()->myLoginViewModel.loginButton()}"
-            android:text="Login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />
 
         <TextView
             android:id="@+id/SignUpButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:textAlignment="center"
+            android:layout_marginTop="40dp"
             android:text="Sign Up!"
             android:textStyle="bold"
             android:onClick="@{()->myLoginViewModel.signUP()}"
+            style="@style/RegText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+            app:layout_constraintTop_toBottomOf="@+id/RelativeLayout01" />
 
+        <RelativeLayout
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextField">
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:onClick="@{()->myLoginViewModel.loginButton()}"
+                android:text="Login" />
+
+        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

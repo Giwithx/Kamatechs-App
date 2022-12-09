@@ -1,18 +1,19 @@
 package com.example.kamatechsmobileapplication.userDetails
 
+import android.provider.ContactsContract.Profile
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kamatechsmobileapplication.R
 import com.example.kamatechsmobileapplication.database.RegisterEntity
-import com.example.kamatechsmobileapplication.databinding.ListItemBinding
+import com.example.kamatechsmobileapplication.databinding.ProfileListItemBinding
 
 class MyRecycleViewAdapter(private val usersList :List<RegisterEntity>): RecyclerView.Adapter<MyviewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyviewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding: ListItemBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.list_item,parent,false)
+        val binding: ProfileListItemBinding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.profile_list_item,parent,false)
         return MyviewHolder(binding)
     }
 
@@ -28,7 +29,7 @@ class MyRecycleViewAdapter(private val usersList :List<RegisterEntity>): Recycle
 
 }
 
-class MyviewHolder(private val binding :ListItemBinding ): RecyclerView.ViewHolder(binding.root){
+class MyviewHolder(private val binding :ProfileListItemBinding): RecyclerView.ViewHolder(binding.root){
 
     fun bind(user : RegisterEntity){
         binding.FirstNameTextView.text = user.firstName

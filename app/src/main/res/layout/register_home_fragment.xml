@@ -2,48 +2,106 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.kamatechsmobileapplication.login.LoginFragment">
+    tools:context="com.example.kamatechsmobileapplication.register.RegisterFragment">
 
     <data>
         <variable
-            name="myLoginViewModel"
-            type="com.example.kamatechsmobileapplication.login.LoginViewModel" />
+            name="myViewModel"
+            type="com.example.kamatechsmobileapplication.register.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <EditText
+            android:id="@+id/secondNameTextField"
+            style="@style/TextAppearance.AppCompat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="80dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="Enter Last Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={myViewModel.inputLastName}"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondNameText" />
+
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:id="@+id/firstNameText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="80dp"
-            android:text="Login"
-            android:textSize="24sp"
+            android:text="First Name :"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/first_name_text_field"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/userNameTextView"
+        <EditText
+            android:id="@+id/first_name_text_field"
+            style="@style/TextAppearance.AppCompat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="73dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="80dp"
-            android:text="User Name"
+            android:hint="Enter First Name"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:text="@={myViewModel.inputFirstName}"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstNameText" />
+
+        <TextView
+            android:id="@+id/secondNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:text="Last Name :"
             android:textAlignment="viewStart"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/first_name_text_field" />
+
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:text="User Name :"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondNameTextField" />
 
         <TextView
             android:id="@+id/passwordTextView"
@@ -52,7 +110,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="80dp"
-            android:text="Password"
+            android:text="Password :"
             android:textAlignment="viewStart"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -72,8 +130,7 @@
             android:hint="Enter User Name"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="@={myLoginViewModel.inputUsername}"
+            android:text="@={myViewModel.inputUsername}"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +148,7 @@
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@={myLoginViewModel.inputPassword}"
+            android:text="@={myViewModel.inputPassword}"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -105,25 +162,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="16dp"
-            android:onClick="@{()->myLoginViewModel.loginButton()}"
-            android:text="Login"
+            android:onClick="@{()->myViewModel.sumbitButton()}"
+            android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
-
-        <TextView
-            android:id="@+id/SignUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:text="Sign Up!"
-            android:textStyle="bold"
-            android:onClick="@{()->myLoginViewModel.signUP()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/submitButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

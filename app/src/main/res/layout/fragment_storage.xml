@@ -1,58 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.StorageFragment">
+    tools:context="com.example.kamatechsmobileapplication.StorageFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/StorageConstraint"
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.kamatechsmobileapplication.storage.StorageViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
-        <TextView
+        <EditText
             android:id="@+id/txtTemp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="24dp"
-            android:text="Temperature"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="15dp"
 
-        <TextView
+            android:ems="10"
+            android:text="@={myViewModel.inputTemp}"
+            android:hint="Storage Temperature"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/txtHumid"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
-            android:text="Humidity"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/txtTemp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="15dp"
 
-        <TextView
+            android:ems="10"
+            android:text="@={myViewModel.inputHumid}"
+            android:hint="Storage Humidity"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/txtStat"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
-            android:text="Status"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/txtHumid"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="15dp"
 
-        <TextView
-            android:id="@+id/txtAdjust"
+            android:ems="10"
+            android:text="@={myViewModel.inputStat}"
+            android:hint="Storage Status"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtAdj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+
+            android:ems="10"
+            android:text="@={myViewModel.inputAdj}"
+            android:hint="Storage Adjustment"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
-            android:text="Adjustment"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/txtStat"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnsaveupdate"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->myViewModel.saveupdate()}"
+                android:text="@={myViewModel.btnsaveupdateText}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/btndeleteall"
+                android:layout_width="303dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{()->myViewModel.deleteall()}"
+                android:text="@={myViewModel.btndeleteText}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/storage_recyclerView"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+</layout>

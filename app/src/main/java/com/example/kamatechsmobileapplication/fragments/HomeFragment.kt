@@ -30,6 +30,9 @@ class HomeFragment : Fragment() {
         binding.btnUsers.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_userDetailsFragment)
         }
+        binding.btnStorage.setOnClickListener{view: View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_storageFragment)
+        }
         return binding.root
     }
 

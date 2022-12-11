@@ -12,85 +12,85 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Login"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginTop="80dp"
+        <ImageView
+            android:id="@+id/loginLogo"
+            android:layout_width="214dp"
+            android:layout_height="163dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/userNameTextField"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernametxt"
+            style="@style/TextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:drawableLeft="@drawable/usericon"
-            android:drawablePadding="20dp"
+            android:layout_marginTop="30dp"
             android:hint="Username"
-            android:inputType="textPersonName"
-            android:padding="20dp"
-            android:text="@={myLoginViewModel.inputUsername}"
-            android:textColor="@color/textColorPrimary"
-            android:textColorHint="@color/textColorSecondary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/loginLogo" >
 
-        <EditText
-            android:id="@+id/passwordTextField"
-            android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/usericon"
+                android:drawablePadding="20dp"
+                android:inputType="textPersonName"
+                android:text="@={myLoginViewModel.inputUsername}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passtxt"
+            style="@style/TextInput"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:layout_margin="25dp"
-            android:drawableLeft="@drawable/passicon"
-            android:drawablePadding="20dp"
-            android:padding="20dp"
-            android:inputType="textPassword"
-            android:text="@={myLoginViewModel.inputPassword}"
-            android:textColor="@color/textColorPrimary"
-            android:textColorHint="@color/textColorSecondary"
+            app:layout_constraintTop_toBottomOf="@+id/usernametxt" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/passicon"
+                android:drawablePadding="20dp"
+                android:inputType="textPassword"
+                android:text="@={myLoginViewModel.inputPassword}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/submitButton"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:onClick="@{()->myLoginViewModel.loginButton()}"
+            android:text="Login"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />
+            app:layout_constraintTop_toBottomOf="@+id/passtxt" />
 
         <TextView
             android:id="@+id/SignUpButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="52dp"
             android:text="Sign Up!"
+            android:textColor="@color/textColorPrimary"
             android:textStyle="bold"
             android:onClick="@{()->myLoginViewModel.signUP()}"
-            style="@style/RegText"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RelativeLayout01" />
-
-        <RelativeLayout
-            android:id="@+id/RelativeLayout01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/passwordTextField">
-
-            <Button
-                android:id="@+id/submitButton"
-                style="@style/Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:onClick="@{()->myLoginViewModel.loginButton()}"
-                android:text="Login" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toBottomOf="@+id/submitButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/homeActivity"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item android:title="Features">
+        <menu>
+            <item
+                android:id="@+id/weatherActivity"
+                android:icon="@drawable/cloudy"
+                android:title="Weather" />
+            <item
+                android:id="@+id/storageActivity"
+                android:icon="@drawable/freezer"
+                android:title="Storage" />
+        </menu>
+    </item>
 
-    <item
-        android:id="@+id/aboutFragment"
-        android:icon="@drawable/about"
-        android:title="About" />
-    <item
-        android:id="@+id/FAQFragment"
-        android:icon="@drawable/faq"
-        android:title="FAQ" />
+    <item android:title="Profile" >
+        <menu>
+            <item
+                android:id="@+id/loginFragment"
+                android:icon="@drawable/ic_baseline_login_24"
+                android:title="Login" />
+            <item
+                android:id="@+id/registerFragment"
+                android:icon="@drawable/ic_baseline_app_registration_24"
+                android:title="Register" />
+        </menu>
+    </item>
+    <item android:title="Support">
+        <menu>
+            <item
+                android:id="@+id/aboutFragment"
+                android:icon="@drawable/about"
+                android:title="About" />
+            <item
+                android:id="@+id/FAQFragment"
+                android:icon="@drawable/faq"
+                android:title="FAQ" />
+        </menu>
+    </item>
+
 </menu>

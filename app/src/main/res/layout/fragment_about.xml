@@ -17,7 +17,7 @@
             android:text="About"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="60sp"
+            android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,21 +26,22 @@
             android:id="@+id/dev1pic"
             android:layout_width="136dp"
             android:layout_height="139dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/_01818"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="119dp"
-            android:layout_marginTop="20dp"
-            tools:ignore="MissingConstraints"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtAbout"/>
+            app:layout_constraintTop_toBottomOf="@id/txtAbout"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtaboutdev1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
             android:text="BIELZA, GIOVANNI"
             android:textAlignment="center"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dev1pic" />
@@ -62,8 +63,10 @@
             android:id="@+id/txtaboutdev2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
             android:text="CREBELLO, CYNNA MAE"
             android:textAlignment="center"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dev2pic" />
@@ -85,8 +88,10 @@
             android:id="@+id/txtaboutdev3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
             android:text="PAJUDPOD JR., ALBERTO"
             android:textAlignment="center"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dev3pic" />

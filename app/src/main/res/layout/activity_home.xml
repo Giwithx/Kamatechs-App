@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/homeLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/homeConstraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent">
+
+                    <TextView
+                        android:id="@+id/txtHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="52dp"
+                        android:fontFamily="@font/bangers"
+                        android:lineSpacingExtra="34sp"
+                        android:text="@string/kamatechs"
+                        android:textSize="60sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="180dp"
+                        android:layout_height="135dp"
+                        android:layout_marginStart="124dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtHome"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:id="@+id/txtDescriptionHome"
+                        android:layout_width="308dp"
+                        android:layout_height="316dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/cherry_swash"
+                        android:text="@string/kamatechs_is_a_deep_learning_based_application_that_can_perform_one_day_ahead_prediction_to_make_cooling_storage_be_adaptive_to_the_outside_environment"
+                        android:textAlignment="center"
+                        android:textSize="28sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:keepScreenOn="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/bottom_nav" />
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/navdrawer_menu"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

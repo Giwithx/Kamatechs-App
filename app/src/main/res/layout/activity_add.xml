@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_settings_input_composite_24"
                 android:drawablePadding="20dp"
-                android:inputType="number"/>
+                android:inputType="textPersonName"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

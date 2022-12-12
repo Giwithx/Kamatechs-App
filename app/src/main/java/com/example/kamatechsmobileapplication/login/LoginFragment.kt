@@ -86,7 +86,7 @@ class LoginFragment : Fragment() {
         return binding.root
     }
     private fun navigatetoHome(){
-        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToHomeActivity()
         NavHostFragment.findNavController(this).navigate(action)
     }
     private fun navigatetoRegister(){

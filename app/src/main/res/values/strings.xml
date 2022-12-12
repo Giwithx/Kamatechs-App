@@ -2,4 +2,9 @@
     <string name="app_name">KamatechsMobileApplication</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kamatechs_is_a_deep_learning_based_application_that_can_perform_one_day_ahead_prediction_to_make_cooling_storage_be_adaptive_to_the_outside_environment">Kamatechs is a deep learning-based application that can perform one-day ahead prediction to make cooling storage be adaptive to the outside environment.</string>
+    <string name="todo">TODO</string>
+    <string name="kamatechs">Kamatechs</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

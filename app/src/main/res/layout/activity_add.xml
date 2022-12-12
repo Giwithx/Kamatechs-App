@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="32dp"
+    android:orientation="vertical"
+    tools:context=".AddActivity">
+
+    <EditText
+        android:id="@+id/editTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Temperature"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editHumid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Humidity"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editAdj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Adjustment"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnAddsUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Insert Data" />
+</androidx.appcompat.widget.LinearLayoutCompat>

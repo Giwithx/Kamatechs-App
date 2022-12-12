@@ -11,14 +11,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class WeatherActivity: AppCompatActivity() {
-    private var weatherData: TextView? = null
+    private var weatherData_Temp: TextView? = null
+    private var weatherData_Temp_Min: TextView? = null
+    private var weatherData_Temp_Max: TextView? = null
+    private var weatherData_Place: TextView? = null
+    private var weatherData_Wind: TextView? = null
+    private var weatherData_Pressure: TextView? = null
+    private var weatherData_Humidity: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
 
 
 
-        weatherData = findViewById(R.id.tvWeatherData)
+        weatherData_Temp = findViewById(R.id.tvWeatherData_Temp)
+        weatherData_Temp_Min = findViewById(R.id.tvWeatherData_Temp_Min)
+        weatherData_Temp_Max = findViewById(R.id.tvWeatherData_Temp_Max)
+        weatherData_Place = findViewById(R.id.tvWeatherData_Place)
+        weatherData_Wind = findViewById(R.id.tvWeatherData_Wind)
+        weatherData_Pressure = findViewById(R.id.tvWeatherData_Pressure)
+        weatherData_Humidity = findViewById(R.id.tvWeatherData_Humidity)
         findViewById<View>(R.id.btnWeatherUpdate).setOnClickListener {
             getCurrentData()
         }
@@ -43,32 +55,32 @@ class WeatherActivity: AppCompatActivity() {
                 if (response.code() == 200){
                     val weatherResponse = response.body()!!
 
-                    val stringBuilder = "Country: " +
-                            weatherResponse.sys!!.country +
-                            "\n" +
-                            "Place: " +
-                            weatherResponse.name +
-                            "\n" +
-                            "Temperature: " +
-                            weatherResponse.main!!.temp +
-                            "\n" +
-                            "Temperature(Min): " +
-                            weatherResponse.main!!.temp_min +
-                            "\n" +
-                            "Temperature(Max): " +
-                            weatherResponse.main!!.temp_max +
-                            "\n" +
-                            "Humidity: " +
-                            weatherResponse.main!!.humidity +
-                            "\n" +
-                            "Pressure: " +
-                            weatherResponse.main!!.pressure
-                    weatherData!!.text = stringBuilder
+                    val temp = "" + weatherResponse.main!!.temp + "(°C)"
+                    val temp_min = "Minimum: " + weatherResponse.main!!.temp_min + "(°C)"
+                    val temp_max = "Maximum: " + weatherResponse.main!!.temp_max + "(°C)"
+                    val place = "" + weatherResponse.name + ", " + weatherResponse.sys!!.country
+                    val wind = "Wind" + "\n" + weatherResponse.wind!!.speed
+                    val humidity = "Humidity" + "\n" + weatherResponse.main!!.humidity
+                    val pressure = "Pressure" + "\n" + weatherResponse.main!!.pressure
+
+                    weatherData_Temp!!.text = temp
+                    weatherData_Temp_Min!!.text = temp_min
+                    weatherData_Temp_Max!!.text = temp_max
+                    weatherData_Place!!.text = place
+                    weatherData_Wind!!.text = wind
+                    weatherData_Humidity!!.text = humidity
+                    weatherData_Pressure!!.text = pressure
                 }
             }
 
             override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-                weatherData!!.text = t.message
+                weatherData_Temp!!.text = t.message
+                weatherData_Temp_Min!!.text = t.message
+                weatherData_Temp_Max!!.text = t.message
+                weatherData_Place!!.text = t.message
+                weatherData_Wind!!.text = t.message
+                weatherData_Humidity!!.text = t.message
+                weatherData_Pressure!!.text = t.message
             }
 
         })

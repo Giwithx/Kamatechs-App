@@ -9,27 +9,147 @@
     android:background="@color/colorAccent">
 
 
-    <TextView
-        android:id="@+id/tvWeatherData"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:fontFamily="@font/raleway"
+        android:gravity="center_horizontal"
+        android:hint="Temp"
+        android:textColor="#000000"
+        android:textColorHint="@color/textColorPrimary"
+        android:textSize="96sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Temp_Max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/textColorPrimary"
-        android:fontFamily="@font/bebas_neue"
-        android:textSize="30sp"
+        android:drawableStart="@drawable/temp"
+        android:fontFamily="@font/raleway"
+        android:gravity="center_horizontal"
+        android:hint="Temp_Max"
+        android:textColor="#000000"
+        android:textColorHint="#00897B"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Temp">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Temp_Min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:drawableStart="@drawable/temp"
+        android:fontFamily="@font/raleway"
+        android:gravity="center"
+        android:hint="Temp_Min"
+        android:textColor="#000000"
+        android:textColorHint="@color/textColorPrimary"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Temp">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:fontFamily="@font/raleway"
+        android:gravity="center_horizontal"
+        android:hint="Place"
+        android:textColor="#000000"
+        android:textColorHint="#00897B"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Temp_Min">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:drawableTop="@drawable/ic_baseline_water_drop_24"
+        android:fontFamily="@font/raleway"
+        android:hint="Humidity"
+        android:textColor="#000000"
+        android:textColorHint="#00897B"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Place">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:drawableTop="@drawable/ic_baseline_equalizer_24"
+        android:fontFamily="@font/raleway"
+        android:gravity="center_horizontal"
+        android:hint="Pressure"
+        android:textColor="#000000"
+        android:textColorHint="#00897B"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Place">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWeatherData_Wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/textColorPrimary"
+        android:drawableTop="@drawable/humid"
+        android:fontFamily="@font/raleway"
+        android:gravity="center_horizontal"
+        android:hint="Wind"
+        android:textColor="#000000"
+        android:textColorHint="#00897B"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Place">
+
+    </com.google.android.material.textview.MaterialTextView>
 
     <Button
         android:id="@+id/btnWeatherUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="112dp"
         android:text="Get Weather Data"
+        android:textColor="#263238"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWeatherData_Pressure" />
 </androidx.constraintlayout.widget.ConstraintLayout>

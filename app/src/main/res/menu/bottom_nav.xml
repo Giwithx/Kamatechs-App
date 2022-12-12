@@ -7,15 +7,19 @@
         android:icon="@drawable/home"
         android:title="Home" />
     <item
+        android:id="@+id/weatherActivity"
+        android:icon="@drawable/cloudy"
+        android:title="Weather" />
+    <item
         android:id="@+id/aboutFragment"
         android:icon="@drawable/about"
         android:title="About" />
     <item
+        android:id="@+id/storageActivity"
+        android:icon="@drawable/freezer"
+        android:title="Storage" />
+    <item
         android:id="@+id/FAQFragment"
         android:icon="@drawable/faq"
         android:title="FAQ" />
-    <item
-        android:id="@+id/weatherActivity"
-        android:icon="@drawable/cloudy"
-        android:title="Weather" />
 </menu>

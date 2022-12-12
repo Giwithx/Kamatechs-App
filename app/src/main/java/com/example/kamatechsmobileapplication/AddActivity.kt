@@ -25,10 +25,10 @@ class AddActivity : AppCompatActivity() {
         }
         else {
             binding.btnAddsUp.text= "Update"
-            binding.editTemp.setText(storage?.temp.toString())
-            binding.editHumid.setText(storage?.humid.toString())
-            binding.editStat.setText(storage?.stat.toString())
-            binding.editAdj.setText(storage?.adj.toString())
+            binding.editTemp.editText?.setText(storage?.temp.toString())
+            binding.editHumid.editText?.setText(storage?.humid.toString())
+            binding.editStat.editText?.setText(storage?.stat.toString())
+            binding.editAdj.editText?.setText(storage?.adj.toString())
         }
 
 
@@ -36,10 +36,10 @@ class AddActivity : AppCompatActivity() {
     }
 
     private fun Adds() {
-        val temp = binding.editTemp.text.toString()
-        val humid = binding.editHumid.text.toString()
-        val stat = binding.editStat.text.toString()
-        val adj = binding.editAdj.text.toString()
+        val temp = binding.editTemp.editText?.text.toString()
+        val humid = binding.editHumid.editText?.text.toString()
+        val stat = binding.editStat.editText?.text.toString()
+        val adj = binding.editAdj.editText?.text.toString()
 
         lifecycleScope.launch {
             if(storage==null){

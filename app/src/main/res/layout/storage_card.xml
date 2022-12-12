@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#2196F3"
+    android:background="@color/colorPrimaryLight"
     android:orientation="vertical"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
@@ -23,7 +23,7 @@
             android:id="@+id/txTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Temperature: " />
 
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/txTemp"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Temperature" />
 
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txTemp"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Humidity: " />
 
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txTemp"
             android:layout_toEndOf="@id/txHumid"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Humidity" />
 
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txHumid"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Status: " />
 
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txHumid"
             android:layout_toEndOf="@id/txStat"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Status" />
 
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txStat"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Status: " />
 
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txStat"
             android:layout_toEndOf="@id/txAdj"
-            android:textColor="@color/cardview_light_background"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
             tools:text="Adjustment: " />
 

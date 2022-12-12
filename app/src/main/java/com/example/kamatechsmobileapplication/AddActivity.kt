@@ -34,6 +34,16 @@ class AddActivity : AppCompatActivity() {
 
 
         binding.btnAddsUp.setOnClickListener { Adds() }
+
+        val actionbar = supportActionBar
+        actionbar!!.title = "Add Storage Data"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun Adds() {

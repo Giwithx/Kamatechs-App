@@ -16,6 +16,7 @@ import com.example.kamatechsmobileapplication.R
 import com.example.kamatechsmobileapplication.database.RegisterDatabase
 import com.example.kamatechsmobileapplication.database.RegisterRepository
 import com.example.kamatechsmobileapplication.databinding.FragmentLoginBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class LoginFragment : Fragment() {
@@ -56,26 +57,27 @@ class LoginFragment : Fragment() {
 
         loginViewModel.errotoast.observe(viewLifecycleOwner, Observer { hasError->
             if(hasError==true){
-                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.myCoordinatorLayout,"Please fill all fields", Snackbar.LENGTH_SHORT).show()
                 loginViewModel.donetoast()
             }
         })
 
         loginViewModel.errotoastUsername .observe(viewLifecycleOwner, Observer { hasError->
             if(hasError==true){
-                Toast.makeText(requireContext(), "User doesnt exist,please Register!", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.myCoordinatorLayout,"User doesnt exist, please Register!", Snackbar.LENGTH_SHORT).show()
                 loginViewModel.donetoastErrorUsername()
             }
         })
 
         loginViewModel.errorToastInvalidPassword.observe(viewLifecycleOwner, Observer { hasError->
             if(hasError==true){
-                Toast.makeText(requireContext(), "Please check your Password", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.myCoordinatorLayout,"Please check your Password", Snackbar.LENGTH_SHORT).show()
                 loginViewModel.donetoastInvalidPassword()
             }
         })
         loginViewModel.navigatetoUserDetails.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
+                Snackbar.make(binding.myCoordinatorLayout,"Login Sucessfully", Snackbar.LENGTH_SHORT).show()
                 navigatetoHome()
                 loginViewModel.doneNavigatingHome()
             }

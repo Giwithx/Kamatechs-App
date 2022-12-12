@@ -16,6 +16,7 @@ import com.example.kamatechsmobileapplication.R
 import com.example.kamatechsmobileapplication.database.RegisterDatabase
 import com.example.kamatechsmobileapplication.database.RegisterRepository
 import com.example.kamatechsmobileapplication.databinding.RegisterHomeFragmentBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class RegisterFragment : Fragment() {
@@ -59,14 +60,14 @@ class RegisterFragment : Fragment() {
 
         registerViewModel.errotoast.observe(viewLifecycleOwner, Observer { hasError->
             if(hasError==true){
-                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.myCoordinatorLayout,"Please fill all fields", Snackbar.LENGTH_SHORT).show()
                 registerViewModel.donetoast()
             }
         })
 
         registerViewModel.errotoastUsername.observe(viewLifecycleOwner, Observer { hasError->
             if(hasError==true){
-                Toast.makeText(requireContext(), "UserName Already taken", Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.myCoordinatorLayout,"Username already taken.", Snackbar.LENGTH_SHORT).show()
                 registerViewModel.donetoastUserName()
             }
         })

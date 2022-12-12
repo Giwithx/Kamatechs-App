@@ -6,28 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".StorageActivity">
 
-    |
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/myCoordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btnAddstorage" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/btnAddstorage" />
 
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAddstorage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="35dp"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="36dp"
         android:focusable="true"
         android:src="@android:drawable/ic_input_add"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="add"
         app:rippleColor="@color/colorPrimaryDark"
         tools:ignore="SpeakableTextPresentCheck" />
-
 
 </RelativeLayout>

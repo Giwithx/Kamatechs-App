@@ -13,6 +13,7 @@ import com.example.kamatechsmobileapplication.databinding.ActivityStorageBinding
 import com.example.kamatechsmobileapplication.storagedb.Storage
 import com.example.kamatechsmobileapplication.storagedb.StorageAdapter
 import com.example.kamatechsmobileapplication.storagedb.StorageDB
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class StorageActivity : AppCompatActivity() {
@@ -28,10 +29,18 @@ class StorageActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+        val actionbar = supportActionBar
+        actionbar!!.title = "Storage"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setAdapter(list: List<Storage>){
         mAdapter?.setData(list)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onResume() {
@@ -59,6 +68,7 @@ class StorageActivity : AppCompatActivity() {
                                 StorageDB(this@StorageActivity).getStorageDao().deleteStorage(it)
                                 val list = StorageDB(this@StorageActivity).getStorageDao().getStorage()
                                 setAdapter(list)
+                                Snackbar.make(binding.myCoordinatorLayout,"Deleted Successfully", Snackbar.LENGTH_SHORT).show()
                             }
                             p0.dismiss()
                         }

@@ -3,11 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_add.xml" value="0.13405797101449277" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_storage.xml" value="0.13405797101449277" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/activity_weather.xml" value="0.36666666666666664" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_about.xml" value="0.33" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
@@ -15,18 +13,11 @@
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_register.xml" value="0.33" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_storage.xml" value="0.2" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_storage_in.xml" value="0.18854166666666666" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_storage_view.xml" value="0.1875" />
+        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_storage.xml" value="0.37604166666666666" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/fragment_weather.xml" value="0.25" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/list_item.xml" value="0.17806484295845998" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/lists_item.xml" value="0.17806484295845998" />
         <entry key="..\:/Kamatechs-App/app/src/main/res/layout/nav_header.xml" value="0.18802083333333333" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/profile_list_item.xml" value="0.29270833333333335" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/register_home_fragment.xml" value="0.29270833333333335" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/storage_card.xml" value="0.33" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/layout/user_details_fragment.xml" value="0.29270833333333335" />
-        <entry key="..\:/Kamatechs-App/app/src/main/res/menu/bottom_nav.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>

@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_homeFragment_to_storageFragment"
             app:destination="@id/storageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_storageActivity"
+            app:destination="@id/storageActivity" />
     </fragment>
     <fragment
         android:id="@+id/userDetailsFragment"
@@ -68,4 +71,8 @@
         android:id="@+id/storageFragment"
         android:name="com.example.kamatechsmobileapplication.storage.StorageFragment"
         android:label="StorageFragment" />
+    <activity
+        android:id="@+id/storageActivity"
+        android:name="com.example.trydbu.StorageActivity"
+        android:label="StorageActivity" />
 </navigation>

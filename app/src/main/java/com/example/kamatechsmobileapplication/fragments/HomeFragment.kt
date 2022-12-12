@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_weatherActivity)
         }
         binding.btnStorage.setOnClickListener{view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_storageFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_storageActivity)
         }
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when(item.itemId){

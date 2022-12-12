@@ -1,26 +1,16 @@
 package com.example.kamatechsmobileapplication.storagedb
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
-@Entity(tableName = "Storage_data")
-data class Storage (
+@Entity
+data class Storage(
+    var temp: String = "",
+    var humid: String = "",
+    var stat: String = "",
+    var adj: String = "",
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id:Int,
-
-    @ColumnInfo(name = "temperature")
-    var temp: String,
-
-    @ColumnInfo(name = "humidity")
-    var humid: String,
-
-    @ColumnInfo(name = "status")
-    var stat: String,
-
-    @ColumnInfo(name = "adjustment")
-    var adj: String
-
-        )
+    ):  Serializable{
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+}

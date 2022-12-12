@@ -26,6 +26,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".AddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StorageActivity"
+            android:exported="true" />
+        <activity
             android:name=".WeatherActivity"
             android:exported="true"
             android:usesCleartextTraffic="true">

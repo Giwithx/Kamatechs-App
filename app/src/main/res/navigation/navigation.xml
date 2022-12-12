@@ -73,6 +73,7 @@
         android:label="StorageFragment" />
     <activity
         android:id="@+id/storageActivity"
-        android:name="com.example.trydbu.StorageActivity"
-        android:label="StorageActivity" />
+        android:name="com.example.kamatechsmobileapplication.StorageActivity"
+        android:label="activity_storage"
+        tools:layout="@layout/activity_storage" />
 </navigation>

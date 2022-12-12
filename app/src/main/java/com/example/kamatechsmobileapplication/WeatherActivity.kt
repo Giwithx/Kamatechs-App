@@ -16,6 +16,8 @@ class WeatherActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
 
+
+
         weatherData = findViewById(R.id.tvWeatherData)
         findViewById<View>(R.id.btnWeatherUpdate).setOnClickListener {
             getCurrentData()
@@ -25,6 +27,7 @@ class WeatherActivity: AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
+
     private fun getCurrentData(){
         val retrofit = Retrofit.Builder()
             .baseUrl(BaseUrl)
@@ -43,7 +46,8 @@ class WeatherActivity: AppCompatActivity() {
                     val stringBuilder = "Country: " +
                             weatherResponse.sys!!.country +
                             "\n" +
-                            "Place: Marikina City" +
+                            "Place: " +
+                            weatherResponse.name +
                             "\n" +
                             "Temperature: " +
                             weatherResponse.main!!.temp +
@@ -72,8 +76,8 @@ class WeatherActivity: AppCompatActivity() {
     companion object{
         var BaseUrl = "https://api.openweathermap.org/"
         var AppId = "8676f9199326e823e584f9c635179f3a"
-        var lat = "14.65"
-        var lon = "121.10"
+        var lat = "14.6507"
+        var lon = "121.1029"
         var units = "metric"
     }
     override fun onSupportNavigateUp(): Boolean {

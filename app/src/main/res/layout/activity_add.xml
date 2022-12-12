@@ -8,101 +8,88 @@
         android:layout_height="match_parent"
         android:background="@color/colorAccent">
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editTempText"
+            android:id="@+id/editTemp"
             style="@style/TextInput"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="30dp"
             android:hint="Temperature"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTemp"
-                app:startIconDrawable="@drawable/temp"
-                android:drawablePadding="20dp"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:drawableLeft="@drawable/temp"
+                android:drawablePadding="20dp"
+                android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editHumidText"
+            android:id="@+id/editHumid"
             style="@style/TextInput"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:hint="Humidity"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTempText">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editHumid"
-                app:startIconDrawable="@drawable/humid"
+            app:layout_constraintTop_toBottomOf="@+id/editTemp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/humid"
                 android:drawablePadding="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"/>
+                android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editStatText"
+            android:id="@+id/editStat"
             style="@style/TextInput"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:hint="Status"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editHumidText">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editStat"
-                app:startIconDrawable="@drawable/ic_baseline_settings_input_composite_24"
+            app:layout_constraintTop_toBottomOf="@+id/editHumid">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"/>
+                android:drawableLeft="@drawable/ic_baseline_settings_input_composite_24"
+                android:drawablePadding="20dp"
+                android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editAdjText"
+            android:id="@+id/editAdj"
             style="@style/TextInput"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:hint="Adjustment"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editStatText">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editAdj"
-                app:startIconDrawable="@drawable/ic_baseline_adjust_24"
+            app:layout_constraintTop_toBottomOf="@+id/editStat">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLines="1"/>
+                android:drawableLeft="@drawable/ic_baseline_adjust_24"
+                android:drawablePadding="20dp"
+                android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddsUp"
             style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/bangers"
+            android:layout_marginTop="30dp"
             android:text="Update"
-            android:textColor="#263238"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editAdjText" />
+            app:layout_constraintTop_toBottomOf="@+id/editAdj" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

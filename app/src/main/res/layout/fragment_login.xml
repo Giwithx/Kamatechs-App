@@ -9,88 +9,97 @@
             name="myLoginViewModel"
             type="com.example.kamatechsmobileapplication.login.LoginViewModel" />
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/myCoordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent">
-
-        <ImageView
-            android:id="@+id/loginLogo"
-            android:layout_width="214dp"
-            android:layout_height="163dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usernametxt"
-            style="@style/TextInput"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:hint="Username"
-            app:layout_constraintTop_toBottomOf="@+id/loginLogo" >
-
-            <com.google.android.material.textfield.TextInputEditText
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/usericon"
-                android:drawablePadding="20dp"
-                android:inputType="textPersonName"
-                android:text="@={myLoginViewModel.inputUsername}" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passtxt"
-            style="@style/TextInput"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            app:layout_constraintTop_toBottomOf="@+id/usernametxt" >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/passicon"
-                android:drawablePadding="20dp"
-                android:inputType="textPassword"
-                android:text="@={myLoginViewModel.inputPassword}" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/loginLogo"
+                    android:layout_width="214dp"
+                    android:layout_height="163dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
 
 
-        <Button
-            android:id="@+id/submitButton"
-            style="@style/Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:onClick="@{()->myLoginViewModel.loginButton()}"
-            android:text="Login"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passtxt" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/usernametxt"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Username"
+                    app:layout_constraintTop_toBottomOf="@+id/loginLogo" >
 
-        <TextView
-            android:id="@+id/SignUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:text="Sign Up!"
-            android:textColor="@color/textColorPrimary"
-            android:textStyle="bold"
-            android:onClick="@{()->myLoginViewModel.signUP()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/submitButton" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/usericon"
+                        android:drawablePadding="20dp"
+                        android:inputType="textPersonName"
+                        android:text="@={myLoginViewModel.inputUsername}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passtxt"
+                    style="@style/TextInput"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    app:layout_constraintTop_toBottomOf="@+id/usernametxt" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/passicon"
+                        android:drawablePadding="20dp"
+                        android:inputType="textPassword"
+                        android:text="@={myLoginViewModel.inputPassword}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/submitButton"
+                    style="@style/Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:onClick="@{()->myLoginViewModel.loginButton()}"
+                    android:text="Login"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/passtxt" />
+
+                <TextView
+                    android:id="@+id/SignUpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="52dp"
+                    android:text="Sign Up!"
+                    android:textColor="@color/textColorPrimary"
+                    android:textStyle="bold"
+                    android:onClick="@{()->myLoginViewModel.signUP()}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

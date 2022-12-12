@@ -28,10 +28,18 @@ class StorageActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+        val actionbar = supportActionBar
+        actionbar!!.title = "Storage"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setAdapter(list: List<Storage>){
         mAdapter?.setData(list)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onResume() {

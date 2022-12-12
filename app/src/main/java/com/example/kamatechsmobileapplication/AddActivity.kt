@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.kamatechsmobileapplication.databinding.ActivityAddBinding
 import com.example.kamatechsmobileapplication.storagedb.Storage
 import com.example.kamatechsmobileapplication.storagedb.StorageDB
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class AddActivity : AppCompatActivity() {
@@ -45,6 +46,7 @@ class AddActivity : AppCompatActivity() {
             if(storage==null){
                 val storage = Storage(temp = temp, humid = humid, stat = stat, adj = adj)
                 StorageDB(this@AddActivity).getStorageDao().addStorage(storage)
+
                 finish()
             }else {
                 val s = Storage(temp,humid, stat, adj)

@@ -10,7 +10,7 @@
     android:padding="8dp">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -20,37 +20,81 @@
         android:padding="8dp">
 
         <TextView
+            android:id="@+id/txTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp"
+            tools:text="Temperature: " />
+
+        <TextView
             android:id="@+id/texTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/txTemp"
             android:textColor="@color/cardview_light_background"
             android:textSize="18sp"
             tools:text="Temperature" />
 
         <TextView
+            android:id="@+id/txHumid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txTemp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp"
+            tools:text="Humidity: " />
+
+        <TextView
             android:id="@+id/texHumid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txTemp"
+            android:layout_toEndOf="@id/txHumid"
             android:textColor="@color/cardview_light_background"
             android:textSize="18sp"
             tools:text="Humidity" />
 
         <TextView
+            android:id="@+id/txStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txHumid"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp"
+            tools:text="Status: " />
+
+        <TextView
             android:id="@+id/texStat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txHumid"
+            android:layout_toEndOf="@id/txStat"
             android:textColor="@color/cardview_light_background"
             android:textSize="18sp"
             tools:text="Status" />
 
         <TextView
+            android:id="@+id/txAdj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txStat"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp"
+            tools:text="Status: " />
+
+        <TextView
             android:id="@+id/texAdj"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txStat"
+            android:layout_toEndOf="@id/txAdj"
             android:textColor="@color/cardview_light_background"
             android:textSize="18sp"
-            tools:text="Adjustment" />
-    </LinearLayout>
+            tools:text="Adjustment: " />
+
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/action_delete"

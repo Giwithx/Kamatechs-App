@@ -31,26 +31,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_userDetailsFragment"
-            app:destination="@id/userDetailsFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_weatherActivity"
             app:destination="@id/weatherActivity" />
         <action
-            android:id="@+id/action_homeFragment_to_storageFragment"
-            app:destination="@id/storageFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_storageActivity"
             app:destination="@id/storageActivity" />
-    </fragment>
-    <fragment
-        android:id="@+id/userDetailsFragment"
-        android:name="com.example.kamatechsmobileapplication.userDetails.UserDetailsFragment"
-        android:label="user_details_fragment"
-        tools:layout="@layout/user_details_fragment" >
-        <action
-            android:id="@+id/action_userDetailsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <activity
         android:id="@+id/weatherActivity"
@@ -67,10 +52,6 @@
         android:name="com.example.kamatechsmobileapplication.fragments.FAQFragment"
         android:label="fragment_f_a_q"
         tools:layout="@layout/fragment_f_a_q" />
-    <fragment
-        android:id="@+id/storageFragment"
-        android:name="com.example.kamatechsmobileapplication.storage.StorageFragment"
-        android:label="StorageFragment" />
     <activity
         android:id="@+id/storageActivity"
         android:name="com.example.kamatechsmobileapplication.StorageActivity"

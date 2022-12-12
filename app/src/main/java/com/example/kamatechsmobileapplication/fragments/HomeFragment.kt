@@ -1,5 +1,6 @@
 package com.example.kamatechsmobileapplication.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.kamatechsmobileapplication.R
+import com.example.kamatechsmobileapplication.WeatherActivity
 import com.example.kamatechsmobileapplication.databinding.FragmentHomeBinding
 
 
@@ -41,6 +43,12 @@ class HomeFragment : Fragment() {
                 }
                 R.id.FAQFragment -> {
                     replaceFragment(FAQFragment())
+                    true
+                }
+                R.id.weatherActivity -> {
+                    requireActivity().run {
+                        startActivity(Intent(this, WeatherActivity::class.java))
+                    }
                     true
                 }
                 else -> false

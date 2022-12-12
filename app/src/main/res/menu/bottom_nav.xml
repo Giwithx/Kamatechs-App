@@ -14,4 +14,8 @@
         android:id="@+id/FAQFragment"
         android:icon="@drawable/faq"
         android:title="FAQ" />
+    <item
+        android:id="@+id/weatherActivity"
+        android:icon="@drawable/cloudy"
+        android:title="Weather" />
 </menu>

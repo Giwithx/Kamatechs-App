@@ -46,13 +46,6 @@ class UserDetailsFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        userDetailsViewModel.navigateto.observe(viewLifecycleOwner, Observer { hasFinished ->
-            if (hasFinished == true) {
-                val action = UserDetailsFragmentDirections.actionUserDetailsFragmentToHomeFragment()
-                NavHostFragment.findNavController(this).navigate(action)
-                userDetailsViewModel.doneNavigating()
-            }
-        })
 
         initRecyclerView()
 

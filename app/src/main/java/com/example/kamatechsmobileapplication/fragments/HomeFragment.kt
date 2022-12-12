@@ -32,6 +32,23 @@ class HomeFragment : Fragment() {
         binding.btnStorage.setOnClickListener{view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_storageFragment)
         }
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.homeFragment -> {
+                    replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.aboutFragment -> {
+                    replaceFragment(AboutFragment())
+                    true
+                }
+                R.id.FAQFragment -> {
+                    replaceFragment(FAQFragment())
+                    true
+                }
+                else -> false
+            }
+        }
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -44,6 +61,12 @@ class HomeFragment : Fragment() {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
+    }
+    private  fun replaceFragment(fragment: Fragment){
+        val fragmentManager = childFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.homeLayout,fragment)
+        fragmentTransaction.addToBackStack(null).commit()
     }
 
 

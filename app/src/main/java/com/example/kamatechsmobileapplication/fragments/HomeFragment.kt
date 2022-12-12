@@ -26,9 +26,6 @@ class HomeFragment : Fragment() {
         binding.btnWeather.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_weatherActivity)
         }
-        binding.btnUsers.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_userDetailsFragment)
-        }
         binding.btnStorage.setOnClickListener{view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_storageFragment)
         }

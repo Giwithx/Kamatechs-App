@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 class StorageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStorageBinding
     private var mAdapter: StorageAdapter? = null
+    private var name = "default"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,21 @@ class StorageActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        var sharedPreference = getSharedPreferences("Data",MODE_PRIVATE)!!
+        name = sharedPreference.getString("flag","defaultName").toString()
+        var editor = sharedPreference.edit()
+
+        if (name =="1"){
+            Snackbar.make(binding.myCoordinatorLayout,"Data Input Successfully", Snackbar.LENGTH_SHORT).show()
+            editor.putString("flag","default")
+            editor.commit()
+        }else if (name =="2"){
+            Snackbar.make(binding.myCoordinatorLayout,"Data Updated Successfully", Snackbar.LENGTH_SHORT).show()
+            editor.putString("flag","default")
+            editor.commit()
+        }
+
         lifecycleScope.launch{
             val storageList = StorageDB(this@StorageActivity).getStorageDao().getStorage()
 
@@ -54,32 +70,32 @@ class StorageActivity : AppCompatActivity() {
                 adapter =mAdapter
                 setAdapter(storageList)
 
-                    mAdapter?.setOnActionEditListner {
-                        val intent = Intent(this@StorageActivity, AddActivity::class.java)
-                        intent.putExtra("Data",it)
-                        startActivity(intent)
+                mAdapter?.setOnActionEditListner {
+                    val intent = Intent(this@StorageActivity, AddActivity::class.java)
+                    intent.putExtra("Data",it)
+                    startActivity(intent)
+                }
+
+                mAdapter?.setOnDeleteListner {
+                    val builder = AlertDialog.Builder(this@StorageActivity)
+                    builder.setMessage("Are you sure you want to delete ?")
+                    builder.setPositiveButton("YES"){p0, p1 ->
+                        lifecycleScope.launch{
+                            StorageDB(this@StorageActivity).getStorageDao().deleteStorage(it)
+                            val list = StorageDB(this@StorageActivity).getStorageDao().getStorage()
+                            setAdapter(list)
+                            Snackbar.make(binding.myCoordinatorLayout,"Deleted Successfully", Snackbar.LENGTH_SHORT).show()
+                        }
+                        p0.dismiss()
                     }
 
-                    mAdapter?.setOnDeleteListner {
-                        val builder = AlertDialog.Builder(this@StorageActivity)
-                        builder.setMessage("Are you sure you want to delete ?")
-                        builder.setPositiveButton("YES"){p0, p1 ->
-                            lifecycleScope.launch{
-                                StorageDB(this@StorageActivity).getStorageDao().deleteStorage(it)
-                                val list = StorageDB(this@StorageActivity).getStorageDao().getStorage()
-                                setAdapter(list)
-                                Snackbar.make(binding.myCoordinatorLayout,"Deleted Successfully", Snackbar.LENGTH_SHORT).show()
-                            }
-                            p0.dismiss()
-                        }
-
-                        builder.setNegativeButton("NO"){p0, p1 ->
-                            p0.dismiss()
-                        }
-
-                        val dialog = builder.create()
-                        dialog.show()
+                    builder.setNegativeButton("NO"){p0, p1 ->
+                        p0.dismiss()
                     }
+
+                    val dialog = builder.create()
+                    dialog.show()
+                }
             }
         }
     }

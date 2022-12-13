@@ -13,6 +13,7 @@ class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
     private var storage: Storage? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
@@ -52,16 +53,28 @@ class AddActivity : AppCompatActivity() {
         val stat = binding.editStat.editText?.text.toString()
         val adj = binding.editAdj.editText?.text.toString()
 
+        val sharedPreference =  getSharedPreferences("Data",MODE_PRIVATE)
+        var editor = sharedPreference.edit()
+
         lifecycleScope.launch {
             if(storage==null){
                 val storage = Storage(temp = temp, humid = humid, stat = stat, adj = adj)
                 StorageDB(this@AddActivity).getStorageDao().addStorage(storage)
+
+                var name = "default"
+                editor.putString("flag","1")
+                editor.commit()
 
                 finish()
             }else {
                 val s = Storage(temp,humid, stat, adj)
                 s.id=storage?.id?:0
                 StorageDB(this@AddActivity).getStorageDao().updateStorage(s)
+
+                var name = "default"
+                editor.putString("flag","2")
+                editor.commit()
+
                 finish()
             }
         }

@@ -39,23 +39,24 @@
                         android:id="@+id/imageView3"
                         android:layout_width="180dp"
                         android:layout_height="135dp"
-                        android:layout_marginStart="124dp"
                         android:layout_marginTop="4dp"
+                        android:contentDescription="@string/todo"
                         android:src="@drawable/logo"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtHome"
-                        android:contentDescription="@string/todo" />
+                        app:layout_constraintTop_toBottomOf="@+id/txtHome" />
 
                     <TextView
                         android:id="@+id/txtDescriptionHome"
                         android:layout_width="308dp"
                         android:layout_height="316dp"
-                        android:layout_marginStart="60dp"
                         android:layout_marginTop="12dp"
-                        android:fontFamily="@font/cherry_swash"
+                        android:fontFamily="@font/raleway"
                         android:text="@string/kamatechs_is_a_deep_learning_based_application_that_can_perform_one_day_ahead_prediction_to_make_cooling_storage_be_adaptive_to_the_outside_environment"
                         android:textAlignment="center"
                         android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 

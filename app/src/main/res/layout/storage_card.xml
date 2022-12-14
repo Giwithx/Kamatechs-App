@@ -19,13 +19,17 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
-            tools:text="Temperature: " />
+            android:drawableStart="@drawable/temp"
+            android:text="Temperature: "
+            tools:text="Temperature: ">
+
+        </com.google.android.material.textview.MaterialTextView>
 
         <TextView
             android:id="@+id/texTemp"
@@ -36,13 +40,15 @@
             android:textSize="18sp"
             tools:text="Temperature" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txHumid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txTemp"
             android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
+            android:drawableStart="@drawable/humid"
+            android:text="Humidity"
             tools:text="Humidity: " />
 
         <TextView
@@ -55,12 +61,14 @@
             android:textSize="18sp"
             tools:text="Humidity" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txStat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txHumid"
             android:textColor="@color/textColorPrimary"
+            android:text="Status: "
+            android:drawableStart="@drawable/ic_baseline_settings_input_composite_24"
             android:textSize="18sp"
             tools:text="Status: " />
 
@@ -74,14 +82,16 @@
             android:textSize="18sp"
             tools:text="Status" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txAdj"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txStat"
             android:textColor="@color/textColorPrimary"
+            android:text="Adjustment: "
+            android:drawableStart="@drawable/ic_baseline_adjust_24"
             android:textSize="18sp"
-            tools:text="Status: " />
+            tools:text="Adjustment: " />
 
         <TextView
             android:id="@+id/texAdj"
@@ -96,20 +106,20 @@
 
     </RelativeLayout>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/action_delete"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:src="@android:drawable/ic_menu_delete"/>
+        android:src="@drawable/ic_baseline_delete_24"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/action_edit"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
         android:layout_toStartOf="@+id/action_delete"
-        android:src="@android:drawable/ic_menu_edit" />
+        android:src="@drawable/ic_baseline_edit_24" />
 </RelativeLayout>

@@ -11,6 +11,9 @@ interface StorageDAO {
     @Query("SELECT * FROM storage ORDER BY id DESC")
     suspend fun getStorage(): List<Storage>
 
+    @Query("DELETE FROM storage")
+    suspend fun deleteAllStorage()
+
     @Update
     suspend fun updateStorage(storage: Storage)
 

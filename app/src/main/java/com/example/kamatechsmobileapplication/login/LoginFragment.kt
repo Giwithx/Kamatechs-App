@@ -77,9 +77,9 @@ class LoginFragment : Fragment() {
         })
         loginViewModel.navigatetoUserDetails.observe(viewLifecycleOwner, Observer { hasFinished->
             if (hasFinished == true){
-                Snackbar.make(binding.myCoordinatorLayout,"Login Sucessfully", Snackbar.LENGTH_SHORT).show()
                 navigatetoHome()
                 loginViewModel.doneNavigatingHome()
+                Snackbar.make(binding.myCoordinatorLayout,"Login Sucessfully", Snackbar.LENGTH_SHORT).show()
             }
         })
 

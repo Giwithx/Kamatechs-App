@@ -37,4 +37,19 @@
         app:rippleColor="@color/colorPrimaryDark"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDeleteAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:focusable="true"
+        android:src="@android:drawable/ic_delete"
+        android:text="add"
+        app:rippleColor="@color/colorPrimaryDark"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </RelativeLayout>

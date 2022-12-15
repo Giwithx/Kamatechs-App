@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
+            android:drawablePadding="20dp"
             android:drawableStart="@drawable/temp"
             android:text="Temperature: "
             tools:text="Temperature: ">
@@ -47,8 +48,9 @@
             android:layout_below="@id/txTemp"
             android:textColor="@color/textColorPrimary"
             android:textSize="18sp"
+            android:drawablePadding="20dp"
             android:drawableStart="@drawable/humid"
-            android:text="Humidity"
+            android:text="Humidity: "
             tools:text="Humidity: " />
 
         <TextView
@@ -66,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txHumid"
+            android:drawablePadding="20dp"
             android:textColor="@color/textColorPrimary"
             android:text="Status: "
             android:drawableStart="@drawable/ic_baseline_settings_input_composite_24"
@@ -88,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txStat"
             android:textColor="@color/textColorPrimary"
+            android:drawablePadding="20dp"
             android:text="Adjustment: "
             android:drawableStart="@drawable/ic_baseline_adjust_24"
             android:textSize="18sp"

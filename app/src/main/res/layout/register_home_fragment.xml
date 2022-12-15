@@ -112,6 +112,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/passtxt" />
 
+                <ImageView
+                    android:id="@+id/tomatosimg"
+                    android:layout_width="467dp"
+                    android:layout_height="331dp"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/tomatos"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
